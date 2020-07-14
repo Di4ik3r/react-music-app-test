@@ -43,7 +43,6 @@ const users = [
 ];
 
 const Login = ({ account, loginInput, login, loginSetInput }) => {
-	console.log('account - top level - ', account);
 	const history = useHistory();
 	let _form = null;
 
