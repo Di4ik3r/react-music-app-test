@@ -86,8 +86,6 @@ const styles = StyleSheet.create({
 		backgroundColor: '#d1d1d1',
 	},
 	input: {
-		// borderColor: 'grey',
-		// borderWidth: 1,
 		borderBottomWidth: 1,
 		borderBottomColor: 'grey',
 		margin: 5,
@@ -100,11 +98,8 @@ const styles = StyleSheet.create({
 		marginRight: 20,
 	},
 	text: {
-		// height: "100%",
 		width: '100%',
-		// backgroundColor: 'green',
 		textAlign: 'center',
-		// justifyContent: "center",
 		alignSelf: 'center',
 		textTransform: 'uppercase',
 		fontWeight: 'bold',

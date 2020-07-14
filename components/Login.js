@@ -67,7 +67,6 @@ const Login = ({ account, loginInput, login, loginSetInput }) => {
 		});
 		if (account) {
 			history.push('/app/home');
-			// console.log('account', account);
 		}
 	};
 
@@ -82,9 +81,6 @@ const Login = ({ account, loginInput, login, loginSetInput }) => {
 						_form = c;
 					}}
 				/>
-				{/* <TextInput placeholder="login" style={styles.input} /> */}
-				{/* <TextInput placeholder="password" style={styles.input} /> */}
-				{/* <Link to="/app"> */}
 				<View style={appStyles.button}>
 					<Button
 						title="login"

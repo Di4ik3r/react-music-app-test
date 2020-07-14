@@ -40,7 +40,6 @@ const styles = StyleSheet.create({
 	track: {
 		margin: 5,
 		padding: 5,
-		// backgroundColor: 'green',
 		borderColor: 'black',
 		borderWidth: 1,
 		borderRadius: 10,

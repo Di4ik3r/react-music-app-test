@@ -40,20 +40,17 @@ const reducer = (
 				addTrackInput: action.payload,
 			};
 		case actions.REMOVE_TRACK:
-			// console.log('remove-track called');
 			const tracksForRemove = state.tracks.slice();
 			const trackToRemove = tracksForRemove.filter(
 				(item) => item.id === action.payload.id
 			)[0];
 			const index = tracksForRemove.indexOf(trackToRemove);
 			tracksForRemove.splice(index, 1);
-			// console.log('kek', trackToRemove);
 			return {
 				...state,
 				tracks: tracksForRemove,
 			};
 		default:
-			// console.log('default called');
 			return state;
 	}
 };
@@ -64,7 +61,6 @@ const bands = [
 	'Falling In Reverse',
 ];
 
-// const tracks = generateTracks(10);
 let indexer = 0;
 function generateTracks(length) {
 	let result = [];

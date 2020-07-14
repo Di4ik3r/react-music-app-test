@@ -19,7 +19,6 @@ const TrackTemplate = t.struct({
 
 let AddForm = ({ addTrack, addTrackInput, addTrackSetInput }) => {
 	let _form = null;
-	// console.log('kekus', addTrack, addTrackInput, addTrackSetInput);
 
 	const handleSubmit = () => {
 		const input = _form.getValue();
@@ -29,10 +28,8 @@ let AddForm = ({ addTrack, addTrackInput, addTrackSetInput }) => {
 		}
 		const { track, band } = input;
 		if (track && band && track.trim().length > 0 && band.trim().length > 0) {
-			// console.log('kekus');
 			addTrackSetInput({});
 			addTrack({ ...input });
-			// console.log('top lvl add-track');
 			return;
 		}
 	};
@@ -65,14 +62,10 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
 	addTrackSetInput: (input) => {
-		// console.log('begin input');
 		dispatch(addTrackSetInputAction(input));
-		// console.log('end input');
 	},
 	addTrack: (track) => {
-		// 	console.log('begin add');
 		dispatch(addTrackAction(track));
-		// 	console.log('end add');
 	},
 });
 
@@ -94,7 +87,6 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'center',
 		height: '85%',
-		// backgroundColor: 'white',
 		borderRadius: 10,
 		margin: 15,
 	},
@@ -102,10 +94,7 @@ const styles = StyleSheet.create({
 		borderRadius: 15,
 		backgroundColor: 'white',
 		padding: 25,
-		// width: 250,
 		width: '85%',
-		// borderColor: 'black',
-		// borderWidth: 1,
 	},
 });
 
