@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Text, View, StyleSheet, Button } from 'react-native';
 import t from 'tcomb-form-native';
+import { conenct, connect } from 'react-redux';
 
 import HeaderText from './HeaderText';
 import { styles as appStyles } from './App';
+import {
+	addTrack as addTrackAction,
+	addTrackSetInput as addTrackSetInputAction,
+} from '../redux/actions';
 
 const Form = t.form.Form;
 
@@ -12,48 +17,35 @@ const TrackTemplate = t.struct({
 	track: t.String,
 });
 
-const Add = () => {
-	return (
-		<View style={appStyles.appChild}>
-			<HeaderText text="add" />
-			<AddForm />
-		</View>
-	);
-};
-
-const AddForm = () => {
-	const [value, setValue] = useState({});
+let AddForm = ({ addTrack, addTrackInput, addTrackSetInput }) => {
 	let _form = null;
+	// console.log('kekus', addTrack, addTrackInput, addTrackSetInput);
 
 	const handleSubmit = () => {
 		const input = _form.getValue();
 		if (!input) {
-			setValue({});
+			addTrackSetInput({});
 			return;
 		}
 		const { track, band } = input;
 		if (track && band && track.trim().length > 0 && band.trim().length > 0) {
-			setValue({});
+			// console.log('kekus');
+			addTrackSetInput({});
+			addTrack({ ...input });
+			// console.log('top lvl add-track');
 			return;
 		}
-
-		// tracks.push(input);
-		// console.log(input);
-		// console.log(tracks);
 	};
 	return (
 		<View style={styles.addPanelWrapper}>
 			<View style={styles.addPanel}>
 				<Form
-					value={value}
+					value={addTrackInput}
 					type={TrackTemplate}
 					ref={(c) => {
 						_form = c;
 					}}
 				/>
-				{/* <TextInput placeholder="login" style={styles.input} /> */}
-				{/* <TextInput placeholder="password" style={styles.input} /> */}
-				{/* <Link to="/app"> */}
 				<View style={appStyles.button}>
 					<Button
 						title="add"
@@ -63,6 +55,34 @@ const AddForm = () => {
 					/>
 				</View>
 			</View>
+		</View>
+	);
+};
+
+const mapStateToProps = (state) => ({
+	addTrackInput: state.addTrackInput,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+	addTrackSetInput: (input) => {
+		// console.log('begin input');
+		dispatch(addTrackSetInputAction(input));
+		// console.log('end input');
+	},
+	addTrack: (track) => {
+		// 	console.log('begin add');
+		dispatch(addTrackAction(track));
+		// 	console.log('end add');
+	},
+});
+
+AddForm = connect(mapStateToProps, mapDispatchToProps)(AddForm);
+
+const Add = () => {
+	return (
+		<View style={appStyles.appChild}>
+			<HeaderText text="add" />
+			<AddForm />
 		</View>
 	);
 };

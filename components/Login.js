@@ -67,7 +67,7 @@ const Login = ({ account, loginInput, login, loginSetInput }) => {
 		});
 		if (account) {
 			history.push('/app/home');
-			console.log('account', account);
+			// console.log('account', account);
 		}
 	};
 

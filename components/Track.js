@@ -1,15 +1,20 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { connect } from 'react-redux';
 
-const Track = ({ track }) => {
-	const handlePress = () => {};
+import { removeTrack as removeTrackAction } from '../redux/actions';
+
+const Track = ({ track, removeTrack }) => {
+	const handlePress = () => {
+		removeTrack(track.id);
+	};
 
 	return (
-		<View
-			style={styles.track}
+		<TouchableOpacity
 			onPress={() => {
 				handlePress();
 			}}
+			style={styles.track}
 		>
 			<Text
 				style={{
@@ -27,7 +32,7 @@ const Track = ({ track }) => {
 			>
 				Track({track.id}): <Text> {track.track} </Text>
 			</Text>
-		</View>
+		</TouchableOpacity>
 	);
 };
 
@@ -54,4 +59,12 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default Track;
+const mapStateToProps = (state) => ({});
+
+const mapDispatchToProps = (dispatch) => ({
+	removeTrack: (id) => {
+		dispatch(removeTrackAction(id));
+	},
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Track);
