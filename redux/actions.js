@@ -6,52 +6,52 @@ const ADD_TRACK_SET_INPUT = 'ADD_TRACK_SET_INPUT';
 const REMOVE_TRACK = 'REMOVE_TRACK';
 
 export const login = (input) => ({
-	type: LOGIN,
-	payload: {
-		login: input.login,
-		password: input.password,
-	},
+  type: LOGIN,
+  payload: {
+    login: input.login,
+    password: input.password,
+  },
 });
 
 export const logout = () => ({
-	type: LOGOUT,
+  type: LOGOUT,
 });
 
 export const addTrack = ({ band, track }) => ({
-	type: ADD_TRACK,
-	payload: {
-		band,
-		track,
-	},
+  type: ADD_TRACK,
+  payload: {
+    band,
+    track,
+  },
 });
 
 export const loginSetInput = (input) => ({
-	type: LOGIN_SET_INPUT,
-	payload: {
-		band: input.band,
-		track: input.track,
-	},
+  type: LOGIN_SET_INPUT,
+  payload: {
+    band: input.band,
+    track: input.track,
+  },
 });
 
 export const addTrackSetInput = (input) => ({
-	type: ADD_TRACK_SET_INPUT,
-	payload: {
-		input,
-	},
+  type: ADD_TRACK_SET_INPUT,
+  payload: {
+    input,
+  },
 });
 
 export const removeTrack = (id) => ({
-	type: REMOVE_TRACK,
-	payload: {
-		id,
-	},
+  type: REMOVE_TRACK,
+  payload: {
+    id,
+  },
 });
 
 export const actions = {
-	LOGIN,
-	LOGOUT,
-	ADD_TRACK,
-	LOGIN_SET_INPUT,
-	ADD_TRACK_SET_INPUT,
-	REMOVE_TRACK,
+  LOGIN,
+  LOGOUT,
+  ADD_TRACK,
+  LOGIN_SET_INPUT,
+  ADD_TRACK_SET_INPUT,
+  REMOVE_TRACK,
 };
