@@ -6,10 +6,7 @@ import t from 'tcomb-form-native';
 import { connect } from 'react-redux';
 
 import { styles as appStyles } from './App';
-import {
-  login as loginAction,
-  loginSetInput as loginSetInputAction,
-} from '../redux/actions';
+import { login, loginSetInput } from '../redux/actions';
 
 const UserTemplate = t.struct({
   login: t.String,
@@ -116,13 +113,9 @@ const mapStateToProps = (state) => ({
   loginInput: state.loginInput,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  login: (input) => {
-    dispatch(loginAction(input));
-  },
-  loginSetInput: (input) => {
-    dispatch(loginSetInputAction(input));
-  },
-});
+const mapDispatchToProps = {
+  login,
+  loginSetInput,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

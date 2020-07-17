@@ -5,10 +5,7 @@ import { conenct, connect } from 'react-redux';
 
 import HeaderText from './HeaderText';
 import { styles as appStyles } from './App';
-import {
-  addTrack as addTrackAction,
-  addTrackSetInput as addTrackSetInputAction,
-} from '../redux/actions';
+import { addTrack, addTrackSetInput } from '../redux/actions';
 
 const Form = t.form.Form;
 
@@ -60,14 +57,10 @@ const mapStateToProps = (state) => ({
   addTrackInput: state.addTrackInput,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  addTrackSetInput: (input) => {
-    dispatch(addTrackSetInputAction(input));
-  },
-  addTrack: (track) => {
-    dispatch(addTrackAction(track));
-  },
-});
+const mapDispatchToProps = {
+  addTrackSetInput,
+  addTrack,
+};
 
 AddForm = connect(mapStateToProps, mapDispatchToProps)(AddForm);
 

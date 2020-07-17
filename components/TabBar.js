@@ -4,7 +4,7 @@ import { Link } from 'react-router-native';
 import { connect } from 'react-redux';
 
 import { styles as appStyles } from './App';
-import { logout as logoutAction } from '../redux/actions';
+import { logout } from '../redux/actions';
 
 const TabBar = ({ logout }) => {
   return (
@@ -87,8 +87,8 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = (state) => ({});
-const mapDispatchToProps = (dispatch) => ({
-  logout: () => dispatch(logoutAction()),
-});
+const mapDispatchToProps = {
+  logout,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(TabBar);
