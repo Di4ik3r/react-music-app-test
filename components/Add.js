@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, StyleSheet, Button } from 'react-native';
 import t from 'tcomb-form-native';
-import { conenct, connect } from 'react-redux';
+import { connect } from 'react-redux';
 
 import HeaderText from './HeaderText';
 import { styles as appStyles } from './App';

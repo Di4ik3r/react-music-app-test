@@ -41,6 +41,7 @@ import Home from './Home';
 import Login from './Login';
 import Add from './Add';
 import TabBar from './TabBar';
+import LoginCustom from './LoginCustom';
 
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
@@ -53,7 +54,8 @@ const App = () => {
     <Provider store={store}>
       <NativeRouter>
         <View style={styles.body}>
-          <Route exact path="/" component={Index} />
+          {/* <Route exact path="/" component={Index} /> */}
+          <Route exact path="/" component={LoginCustom} />
           <Route path="/app" component={AppIndex} />
         </View>
       </NativeRouter>
