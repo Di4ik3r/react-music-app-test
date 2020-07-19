@@ -118,17 +118,10 @@ const GradientButton = ({ title }) => {
 
 const styles = StyleSheet.create({
   loginCustomContainer: {
-    // padding: 15,
-    // width: '100%',
-    // height: '100%',
     flex: 1,
     backgroundColor: 'white',
   },
   imageHolder: {
-    // backgroundColor: 'grey',
-    // width: '100%',
-    // height: '22%',
-    // flex: 2,
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
@@ -138,16 +131,11 @@ const styles = StyleSheet.create({
     marginLeft: '15%',
   },
   content: {
-    // flex: 5,
     paddingLeft: '10%',
     paddingRight: '10%',
-    // height: '75%',
-    // marginTop: '1%',
-    // backgroundColor: '#a3a3a3',
   },
   textInheritence: {
     color: '#380628',
-    // fontFamily: 'Poppins',
   },
   textHeader: {
     fontWeight: 'bold',
@@ -157,7 +145,6 @@ const styles = StyleSheet.create({
   textHint: {
     marginLeft: '2%',
     width: '40%',
-    // backgroundColor: 'grey',
     lineHeight: 25,
     marginBottom: '5%',
   },
@@ -199,17 +186,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: '16%',
   },
-  passLock: {
-    // width: '100%',
-  },
+  passLock: {},
   passToggle: {
-    // backgroundColor: 'red',
     position: 'absolute',
-    // width: '100%',
-    // textAlign: 'right',
     top: '39%',
     right: 1,
-    // backgroundColor: 'red',
     width: 45,
     height: '50%',
     justifyContent: 'center',
